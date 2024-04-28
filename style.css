@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 500;
+}
+
+:root{
+    --color-text: #233860;
+    --color-number: #233860;
+    --color-wrapper-bg: #ECF0F3;
+    --color-btn-panel-bg: #ECF0F3;
+    --color-btn-bg: #E0E8EE;
+    --color-operator-btn-bg: #d1e1f7;
+    --box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    --body-bg-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+.dark{
+    --color-text: #F8F8F8;
+    --color-number: #F8F8F8;
+    --color-wrapper-bg: #23252D;
+    --color-btn-panel-bg: #2C2C37;
+    --color-btn-bg: #23252D;
+    --color-operator-btn-bg: #212229;
+    --box-shadow: inset 0 0 0.5px 1px hsla(0, 0%,  
+    100%, 0.075),
+    /* shadow ring 👇 */
+    0 0 0 1px hsla(0, 0%, 0%, 0.05),
+    /* multiple soft shadows 👇 */
+    0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+    0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+    0 3.5px 6px hsla(0, 0%, 0%, 0.09);;
+    --body-bg-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-image: var(--body-bg-image);
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.title{
+    color: #F8F8F8;
+    font-size: 22px;
+}
+
+.sub-title{
+    color: #F8F8F8;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.sub-title a{
+    text-decoration: none;
+    color: #40E0D0;
+}
+
+.sub-title a:hover{
+    text-decoration: underline;
+}
+
+.github{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    padding: 3px 7px;
+    font-size: 14px;
+    border-radius: 4px;
+    width: fit-content;
+    background-color: #F8F8F8;
+    transition: all .2s ease;
+    color: #23252D;
+    text-decoration: none;
+}
+
+.github:active{
+    transform: scale(0.98);
+}
+
+.wrapper{
+    background-color: var(--color-wrapper-bg);
+    border-radius: 5px;
+    width: 270px;
+    overflow: hidden;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.nav-bar{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+#current-time{
+    font-size: 12px;
+    user-select: none;
+    color: var(--color-text);
+}
+
+#switch-mode{
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    color: var(--color-text);
+    align-content: center;
+    justify-content: center;
+}
+
+#display{
+    padding: 15px;
+    margin: 0 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    outline: 0;
+    color: var(--color-text);
+    border: 0;
+    font-weight: 600;
+    font-size: 20px;
+    width: calc(270px - 40px);
+    text-align: right;
+    background-color: var(--color-wrapper-bg);
+}
+
+.buttons{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 15px 20px;
+    border-radius: 20px 20px 0 0;
+    background-color: var(--color-btn-panel-bg);
+    box-shadow: var(--box-shadow);
+}
+
+.button{
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.number{
+    color: var(--color-number);
+    background-color: var(--color-btn-bg);
+}
+
+.operator{
+    color: #FF6D18;
+    background-color: var(--color-operator-btn-bg);
+}
+
+.button:active{
+    transform: scale(0.95);
+}
+
+.equal{
+    color: #F8F8F8;
+    background-color: #4357EC !important;
+}
+
+@media screen and (max-width: 480px) {
+    .header{
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        justify-content: space-between;
+    }
+}
